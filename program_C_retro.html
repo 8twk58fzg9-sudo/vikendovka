@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Víkendovka — program</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@400;600;700&display=swap');
+
+  * { box-sizing: border-box; }
+
+  :root{
+    --teal:#1F7A6C;
+    --mustard:#E3A23A;
+    --brick:#C1502E;
+    --cream:#F5EEDA;
+    --ink:#2B2016;
+  }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Karla', system-ui, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 50px 26px 100px;
+  }
+
+  header { text-align: center; margin-bottom: 34px; }
+
+  header svg { width: 140px; height: auto; margin-bottom: 10px; }
+
+  header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    font-size: clamp(2.8rem, 10vw, 4rem);
+    margin: 0;
+    color: var(--ink);
+  }
+
+  header p {
+    margin: 6px 0 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .day { margin-top: 44px; }
+
+  .band {
+    background: var(--accent);
+    color: var(--cream);
+    padding: 12px 22px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .band h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    font-size: 1.9rem;
+    margin: 0;
+  }
+
+  .day--fri { --accent: var(--teal); }
+  .day--sat { --accent: var(--mustard); }
+  .day--sun { --accent: var(--brick); }
+
+  ol.timeline {
+    list-style: none;
+    margin: 0;
+    padding: 18px 4px 0;
+    border-left: 3px solid var(--accent);
+    border-right: 3px solid var(--accent);
+    border-bottom: 3px solid var(--accent);
+  }
+
+  .timeline li {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding: 10px 18px;
+  }
+
+  .timeline li + li { border-top: 1px dotted rgba(43,32,22,0.3); }
+
+  .timeline .time {
+    flex: 0 0 60px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+  }
+
+  .timeline .event {
+    font-weight: 600;
+    font-size: 1.02rem;
+  }
+
+  .stamp {
+    width: 172px;
+    height: 172px;
+    margin: 64px auto 0;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    outline: 1px dashed var(--ink);
+    outline-offset: -8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: rotate(-4deg);
+  }
+
+  .stamp strong {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    font-size: 1.4rem;
+  }
+
+  .stamp span {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  @media print {
+    .sheet { padding: 20px 8px; }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <svg viewBox="0 0 200 90" fill="none">
+        <circle cx="100" cy="34" r="20" fill="#E3A23A"/>
+        <polygon points="20,80 70,25 110,80" fill="#1F7A6C"/>
+        <polygon points="90,80 140,35 180,80" fill="#C1502E"/>
+      </svg>
+      <h1>Víkendovka</h1>
+      <p>Mníchovský potok — september 2026</p>
+    </header>
+
+    <section class="day day--fri">
+      <div class="band"><h2>Piatok</h2></div>
+      <ol class="timeline">
+        <li><span class="time">17:45</span><span class="event">Spoločné aktivity s rodičmi</span></li>
+        <li><span class="time">18:30</span><span class="event">Voľno</span></li>
+        <li><span class="time">19:00</span><span class="event">Večera</span></li>
+        <li><span class="time">20:00</span><span class="event">Večerný program</span></li>
+        <li><span class="time">22:30</span><span class="event">Osobná hygiena, rozchod na izby</span></li>
+        <li><span class="time">23:00</span><span class="event">Večierka a nočný pokoj</span></li>
+      </ol>
+    </section>
+
+    <section class="day day--sat">
+      <div class="band"><h2>Sobota</h2></div>
+      <ol class="timeline">
+        <li><span class="time">8:00</span><span class="event">Budíček</span></li>
+        <li><span class="time">8:15</span><span class="event">Rozcvička</span></li>
+        <li><span class="time">8:30</span><span class="event">Raňajky</span></li>
+        <li><span class="time">9:15</span><span class="event">Ranný program</span></li>
+        <li><span class="time">10:15</span><span class="event">Diskusné skupinky</span></li>
+        <li><span class="time">11:15</span><span class="event">Voľno – športy</span></li>
+        <li><span class="time">12:30</span><span class="event">Obed</span></li>
+        <li><span class="time">13:00</span><span class="event">Spoločná fotka</span></li>
+        <li><span class="time">14:00</span><span class="event">Veľká hra</span></li>
+        <li><span class="time">15:30</span><span class="event">Workshopy</span></li>
+        <li><span class="time">17:00</span><span class="event">Osobné voľno a hry</span></li>
+        <li><span class="time">18:00</span><span class="event">Večera</span></li>
+        <li><span class="time">19:30</span><span class="event">Hlavný program</span></li>
+        <li><span class="time">21:00</span><span class="event">Voľno</span></li>
+        <li><span class="time">22:30</span><span class="event">Osobná hygiena, rozchod na izby</span></li>
+        <li><span class="time">23:00</span><span class="event">Večierka a nočný pokoj</span></li>
+      </ol>
+    </section>
+
+    <section class="day day--sun">
+      <div class="band"><h2>Nedeľa</h2></div>
+      <ol class="timeline">
+        <li><span class="time">7:30</span><span class="event">Budíček</span></li>
+        <li><span class="time">7:45</span><span class="event">Rozcvička</span></li>
+        <li><span class="time">8:00</span><span class="event">Raňajky</span></li>
+        <li><span class="time">8:30</span><span class="event">Služby Božie</span></li>
+        <li><span class="time">10:00</span><span class="event">Diskusné skupinky</span></li>
+        <li><span class="time">11:00</span><span class="event">Balenie</span></li>
+        <li><span class="time">12:00</span><span class="event">Obed</span></li>
+        <li><span class="time">12:30</span><span class="event">Dovidenia</span></li>
+      </ol>
+    </section>
+
+    <div class="stamp">
+      <strong>KLUB 17:14</strong>
+      <span>25. 9. 2026</span>
+    </div>
+  </div>
+</body>
+</html>
