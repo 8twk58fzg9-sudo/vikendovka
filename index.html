@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
 <title>Víkendovka — program</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@400;600;700&display=swap');
 
   * { box-sizing: border-box; }
+
+  :root { color-scheme: light only; }
+  html { background: #F5EEDA; }
 
   :root{
     --teal:#1F7A6C;
@@ -57,8 +61,8 @@
 
   .days-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .band {
@@ -149,27 +153,8 @@
     margin-top: 4px;
   }
 
-  .qr-block {
-    text-align: center;
-    flex: 0 0 auto;
-  }
 
-  .qr-block img {
-    display: block;
-    margin: 0 auto;
-    background: #fff;
-    padding: 6px;
-    border: 2px solid var(--ink);
-  }
 
-  .qr-block p {
-    margin: 6px 0 0;
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.03em;
-    font-size: 0.75rem;
-    color: var(--ink);
-    opacity: 0.75;
-  }
 
   @media print {
     .sheet { padding: 0; }
@@ -197,7 +182,6 @@
         <div class="band"><h2>Piatok</h2></div>
         <ol class="timeline">
           <li><span class="time">17:45</span><span class="event">Spoločné aktivity s rodičmi</span></li>
-          <li><span class="time">18:30</span><span class="event">Voľno</span></li>
           <li><span class="time">19:00</span><span class="event">Večera</span></li>
           <li><span class="time">20:00</span><span class="event">Večerný program</span></li>
           <li><span class="time">22:30</span><span class="event">Osobná hygiena, rozchod na izby</span></li>
@@ -221,7 +205,6 @@
           <li><span class="time">17:00</span><span class="event">Osobné voľno a hry</span></li>
           <li><span class="time">18:00</span><span class="event">Večera</span></li>
           <li><span class="time">19:30</span><span class="event">Hlavný program</span></li>
-          <li><span class="time">21:00</span><span class="event">Voľno</span></li>
           <li><span class="time">22:30</span><span class="event">Osobná hygiena, rozchod na izby</span></li>
           <li><span class="time">23:00</span><span class="event">Večierka a nočný pokoj</span></li>
         </ol>
@@ -246,11 +229,6 @@
       <div class="stamp">
         <strong>KLUB 17:14</strong>
         <span>25. 9. 2026</span>
-      </div>
-
-      <div class="qr-block">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&margin=6&data=https%3A%2F%2Fvikendovka.vercel.app" alt="QR kód na program" width="100" height="100">
-        <p>vikendovka.vercel.app</p>
       </div>
     </div>
   </div>
